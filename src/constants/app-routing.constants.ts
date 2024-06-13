@@ -1,5 +1,5 @@
 export enum AppRoute {
   Catalog = '/games',
-  GamePage = '/game',
+  Game = '/game/:slug',
   NotFound = '*',
 }

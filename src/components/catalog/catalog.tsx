@@ -98,7 +98,6 @@ function Catalog(): JSX.Element {
 
   return (
     <div className={style.wrapper}>
-      {/* <Sort /> */}
       {
         games.map((game) => (
           <div key={game.id} className={style['card-wrapper']}>

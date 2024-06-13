@@ -1,16 +1,7 @@
 import {BASE_URL} from '../../constants/api.constants';
+import {Game} from '../../types/game.type';
 
 import style from './style.module.scss';
-
-type Game = {
-  id: number;
-  slug: string;
-  name: string;
-  description: string;
-  released: string;
-  poster: string;
-  rating: number;
-};
 
 type GameCardProps = {
   game: Game;
