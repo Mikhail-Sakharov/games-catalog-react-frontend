@@ -1,0 +1,19 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+  background-color: $color-dim-gray;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: $color-white;
+  font-style: italic;
+  font-size: 100px;
+
+  max-width: fit-content;
+}
