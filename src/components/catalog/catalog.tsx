@@ -8,16 +8,21 @@ import style from './style.module.scss';
 import {fetchGamesData} from '../../store/api-actions';
 import {SortOrder, SortType} from '../../types/query.type';
 
-function Catalog(): JSX.Element {
+type CatalogProps = {
+  sort?: SortType;
+  order?: SortOrder;
+};
+
+function Catalog({sort, order}: CatalogProps): JSX.Element {
   const dispatch = useAppDispatch();
   const games = useAppSelector(getGames);
 
   useEffect(() => {
     dispatch(fetchGamesData({
-      sort: SortType.Rating,
-      order: SortOrder.Desc
+      sort,
+      order
     }));
-  }, [dispatch]);
+  }, [dispatch, order, sort]);
 
   return (
     <div className={style.wrapper}>

@@ -1,0 +1,142 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+
+  align-self: flex-end;
+}
+
+.sort-wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  max-width: fit-content;
+
+  background-color: $color-silver;
+
+  border: 1px solid black;
+  border-radius: 5px;
+
+  &.opened {
+    border-radius: 5px 5px 0 0;
+
+    .list {
+      visibility: visible;
+    }
+  }
+}
+
+.sort-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  width: 100px;
+  height: 40px;
+  padding: 0;
+
+  outline: none;
+  border-style: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.text {
+  color: $color-white;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.selected-option {
+  color: $color-royal-blue;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.list {
+  position: absolute;
+  top: 40px;
+  left: -1px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+
+  width: calc(100% + 2px);
+
+  border: 1px solid black;
+  border-radius: 0 0 5px 5px;
+
+  background: $color-white;
+
+  list-style: none;
+
+  visibility: hidden;
+}
+
+.item {
+  color: $color-charcoal;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $color-royal-blue;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.order-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: fit-content;
+
+  background-color: $color-silver;
+
+  border: 1px solid black;
+  border-radius: 5px;
+
+  &.flipped {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.order-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  outline: none;
+  border-style: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  color: $color-royal-blue;
+}
