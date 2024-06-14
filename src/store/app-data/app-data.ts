@@ -2,14 +2,16 @@ import {createSlice} from '@reduxjs/toolkit';
 
 import {ReducerNameSpace} from '../../constants/reducer.constants';
 import {Game} from '../../types/game.type';
-import {fetchGamesData} from '../api-actions';
+import {fetchGameData, fetchGamesData} from '../api-actions';
 
 type AppData = {
   games: Game[];
+  game: Game[];
 };
 
 const initialState: AppData = {
-  games: []
+  games: [],
+  game: []
 };
 
 export const appData = createSlice({
@@ -20,6 +22,9 @@ export const appData = createSlice({
     builder
       .addCase(fetchGamesData.fulfilled, (state, action) => {
         state.games = action.payload;
+      })
+      .addCase(fetchGameData.fulfilled, (state, action) => {
+        state.game = action.payload;
       });
   }
 });

@@ -1,3 +1,5 @@
+import {useNavigate} from 'react-router-dom';
+
 import {BASE_URL} from '../../constants/api.constants';
 import {Game} from '../../types/game.type';
 
@@ -10,8 +12,17 @@ type GameCardProps = {
 function GameCard({
   game: {id, slug, name, description, released, poster, rating}
 }: GameCardProps): JSX.Element {
+  const navigate = useNavigate();
+
+  const handleGameCardClick = () => {
+    navigate(`/game/${slug}`);
+  };
+
   return (
-    <div className={style.wrapper}>
+    <div
+      onClick={handleGameCardClick}
+      className={style.wrapper}
+    >
       <div className={style.poster}>
         <img src={`${BASE_URL}${poster}`}
           alt="poster"

@@ -18,3 +18,15 @@ export const fetchGamesData = createAsyncThunk<Game[], QueryArguments | undefine
     return data;
   },
 );
+
+export const fetchGameData = createAsyncThunk<Game[], string, {
+  dispatch: AppDispatch;
+  state: State;
+  extra: AxiosInstance;
+}>(
+  'data/fetchGame',
+  async (slug, {dispatch, extra: api}) => {
+    const {data} = await api.get<Game[]>(`${BASE_URL}${APIRoute.Game}/${slug}`);
+    return data;
+  },
+);
